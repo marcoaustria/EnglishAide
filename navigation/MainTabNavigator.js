@@ -1,7 +1,9 @@
 import React from 'react';
-import { Platform } from 'react-native';
-import { createStackNavigator, createMaterialTopTabNavigator} from 'react-navigation';
-import { IoIosHome } from 'react-icons/fa';
+import { Platform, Dimensions } from 'react-native';
+import { createStackNavigator, createBottomTabNavigator} from 'react-navigation';
+// import{createMaterialBottomTabNavigator} from 'react-native-paper';
+
+import Icon from "react-native-vector-icons/Ionicons";
 
 
 import TabBarIcon from '../components/TabBarIcon';
@@ -9,6 +11,7 @@ import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
+var {height, width} = Dimensions.get('window');
 
 // import {
 //   SafeAreaView, View, Text, StyleSheet
@@ -56,6 +59,8 @@ HomeStack.navigationOptions = {
           ? `ios-information-circle${focused ? '' : '-outline'}`
           : 'md-information-circle'
       }
+
+      
     />
   ),
 };
@@ -67,7 +72,7 @@ const LinksStack = createStackNavigator({
 LinksStack.navigationOptions = {
   tabBarLabel: 'Links',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon
+     <TabBarIcon
       focused={focused}
       name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
     />
@@ -90,40 +95,69 @@ SettingsStack.navigationOptions = {
   ),
 };
 
-export default createMaterialTopTabNavigator(
-  {
-      HomeStack,
-  LinksStack,
-  SettingsStack,
-  }
-  , {
-    tabBarOptions: {
-
-      showIcon: true,
-
-      labelStyle: {
-        fontSize: 12,
-      },
-      tabStyle: {
-        width: 100,
-      },
-      style: {
-        backgroundColor: "#0076be",
-        marginTop: 100,
-      
-        // safeArea: {
-        //   flex: 1,
-        //   backgroundColor: '#ddd'
-        // }
-      }
-    }
-  }
-  
-  );
-
-
-// export default createBottomTabNavigator({
-//   HomeStack,
+// export default createMaterialTopTabNavigator(
+//   {
+//       HomeStack,
 //   LinksStack,
 //   SettingsStack,
+//   }
+//   , {
+//     tabBarOptions: {
+
+//       showIcon: true,
+
+//       labelStyle: {
+//         fontSize: 12,
+//       },
+//       tabStyle: {
+//         width: 100,
+//       },
+//       style: {
+//         backgroundColor: "#0076be",
+//         marginTop: 100,
+      
+        
+//       }
+//     }
+//   }
+  
+//   );
+
+export default createBottomTabNavigator(
+  {
+  HomeStack,
+  LinksStack,
+  SettingsStack,
+},
+
+{tabBarOptions: {
+  
+  // activeTintColor: "#48bf91" ,
+
+  showIcon: true,
+
+labelStyle: {
+  fontSize: 12,
+},
+tabStyle: {
+  width: (1/3)*width,
+  
+},
+style: {
+  backgroundColor: "#0076be",
+
+}
+
+}
+});
+
+// export default createMaterialBottomTabNavigator({
+//   Home: { screen: HomeStack },
+//   Messages: { screen: LinksStack },
+//   Settings: { screen: SettingsStack },
+// }, {
+//   initialRouteName: 'Album',
+//   activeColor: '#f0edf6',
+//   inactiveColor: '#3e2465',
+//   barStyle: { backgroundColor: '#694fad' },
 // });

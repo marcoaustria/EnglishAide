@@ -22,8 +22,8 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
 
-      <SafeAreaView style={{flex: 1, backgroundColor: '#0076be'}}>
-       <View style={{flex: 1}}>
+      // <SafeAreaView style={{flex: 1, backgroundColor: '#0076be'}}>
+      //  <View style={{flex: 1}}>
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
@@ -66,8 +66,8 @@ export default class HomeScreen extends React.Component {
           </View>
         </View>
       </View> 
-      </View>
-      </SafeAreaView>
+      // </View>
+      // </SafeAreaView>
       
     );
   }
