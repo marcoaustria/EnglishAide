@@ -6,7 +6,13 @@ import {
     StyleSheet
     
 } from 'react-native'
+var count =0;
+
 class Profiles extends Component{
+
+    constructor(props){
+        super(props)
+    }
     render(){
         return(
             <View style={styles.profileContainer}>
@@ -16,9 +22,9 @@ class Profiles extends Component{
                     ? require('../assets/images/robot-dev.png')
                     : require('../assets/images/robot-prod.png')
                 }
-                style={styles.profileIcon}
+                style={styles.profileIcon}  
                 />
-                <Text style={styles.profiles} onPress={this.test}>Username</Text>
+                <Text style={styles.profiles} onPress={this.test}>Loser + count++</Text>
             </View>
         )
     }
