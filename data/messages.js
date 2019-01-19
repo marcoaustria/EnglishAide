@@ -25,7 +25,7 @@ module.exports = [
   },
   {
     _id: Math.round(Math.random() * 1000000),
-    text: "You are officially rocking GiftedChat.",
+    text: "You are now talking to your Tutor",
     createdAt: new Date(Date.UTC(2016, 7, 30, 17, 20, 0)),
     system: true,
   },

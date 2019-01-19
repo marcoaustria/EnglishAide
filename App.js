@@ -124,8 +124,8 @@ export default class Example extends React.Component {
             this.onReceive('My favorite place');
           } else {
             if (!this._isAlright) {
+              this.onReceive('¿Hola, como estás?');
               this._isAlright = true;
-              this.onReceive('Alright');
             }
           }
         }
@@ -181,7 +181,8 @@ export default class Example extends React.Component {
     );
   }
 
-  renderBubble(props) {
+  //other person messages 
+    renderBubble(props) {
     return (
       <Bubble
         {...props}
