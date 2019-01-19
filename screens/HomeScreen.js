@@ -7,6 +7,8 @@ import {
   Text,
   TouchableOpacity,
   View,
+  SafeAreaView,
+
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
@@ -19,6 +21,9 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return (
+
+      <SafeAreaView style={{flex: 1, backgroundColor: '#0076be'}}>
+       <View style={{flex: 1}}>
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
@@ -60,7 +65,10 @@ export default class HomeScreen extends React.Component {
             <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
           </View>
         </View>
+      </View> 
       </View>
+      </SafeAreaView>
+      
     );
   }
 
