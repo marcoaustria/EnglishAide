@@ -19,7 +19,7 @@ HomeStack.navigationOptions = {
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
+          ? `ios-home`
           : 'md-home'
       }
     />
@@ -36,7 +36,7 @@ LinksStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-chatbubbles'}
+      name={Platform.OS === 'ios' ? 'ios-chatbubbles' : 'md-chatbubbles'}
     />
   ),
 };
@@ -50,7 +50,7 @@ SettingsStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-settings'}
+      name={Platform.OS === 'ios' ? 'ios-settings' : 'md-settings'}
     />
   ),
 };
@@ -59,4 +59,12 @@ export default createBottomTabNavigator({
   HomeStack,
   LinksStack,
   SettingsStack,
+},
+{
+  navBar: {
+    backgroundColor: '#5B29C1',
+    borderBottomColor: '#48209A',
+    borderBottomWidth: 1
+  }
+
 });

@@ -1,4 +1,6 @@
 import React from 'react';
+
+
 import {
   Image,
   Platform,
@@ -12,10 +14,12 @@ import { WebBrowser } from 'expo';
 import { MonoText } from '../components/StyledText';
 import { getReminderAsync } from 'expo/build/Calendar';
 import Profiles from './Profiles'
+import { BorderlessButton } from 'react-native-gesture-handler';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
+   
   };
 
   render() {
@@ -85,14 +89,23 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
 
   homeContainer:{
-    paddingTop:20
+    paddingTop: Platform.OS === 'ios'
+    ? 43 : 20
+
+  
   },
   homeText:{
     textAlign:'center',
-    fontSize:20
+    fontSize:20,
+    fontWeight: 'bold',
+    fontFamily: 'Times New Roman' 
+
   },
 
   contentContainer: {
+    marginTop: Platform.OS === 'ios'
+    ? -20 : 0,
+  
     paddingTop: 30,
   },  
   // container: {
