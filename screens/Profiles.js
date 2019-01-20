@@ -12,8 +12,18 @@ class Profiles extends Component{
 
     constructor(props){
         super(props)
+        this.state={
+            count:props.count,
+            userSearch:props.userSearch
+        }
+        console.log(this.state.userSearch)
+        // this.test = this.test.bind(this)
     }
     render(){
+        test = () => {
+            console.log("test")
+        }
+        
         return(
             <View style={styles.profileContainer}>
                 <Image
@@ -24,12 +34,14 @@ class Profiles extends Component{
                 }
                 style={styles.profileIcon}  
                 />
-                <Text style={styles.profiles} onPress={this.test}>Loser + count++</Text>
+                <Text style={styles.profiles} onPress={this.test}>{this.state.userSearch} {this.state.count}</Text>
             </View>
         )
     }
     
 }
+
+
 const styles = StyleSheet.create({
 
     profileContainer:{  

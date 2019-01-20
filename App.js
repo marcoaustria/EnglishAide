@@ -3,18 +3,36 @@ import ReactNative from "react-native";
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
-
-// import * as firebase from 'firebase';
+import Login from './screens/Login';
+import ChooseTutor from './screens/ChooseTutor';
 import {GiftedChat, Actions, Bubble, SystemMessage} from 'react-native-gifted-chat';
 import CustomActions from './CustomActions';
 import CustomView from './CustomView';
-// import server from './server';
-
 
 export default class App extends React.Component {
-  state = {
-    isLoadingComplete: false,
-  };
+  
+  constructor(props){
+    super(props)
+    this.state={
+      isLoadingComplete: false,
+      hasChosen: false,
+      isMentor:false
+    }
+    this.hasChosenChange = this.hasChosenChange.bind(this);
+    this.goBack = this.goBack.bind(this);
+  }
+  
+  hasChosenChange = (isMentor)=>{
+    this.setState({
+      hasChosen:true,
+      isMentor:isMentor
+    });
+  }
+  goBack = ()=>{
+    this.setState({
+      hasChosen:false
+    })
+  }
 
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
@@ -26,14 +44,23 @@ export default class App extends React.Component {
         />
       );
     } else {
-      return (
-        <View style={styles.container}>
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-          <AppNavigator />
-        </View>
-      );
+      if(!this.state.hasChosen){
+        return (
+          <View style={styles.container}>
+            {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+            <Login hasChosenChange={this.hasChosenChange } />
+          </View>
+        );
+      }else{
+        return(
+          <ChooseTutor isMentor={this.state.isMentor} goBack={this.goBack}/>
+        )
+      }
     }
   }
+
+
+
 
   _loadResourcesAsync = async () => {
     return Promise.all([
@@ -69,14 +96,4 @@ const styles = StyleSheet.create({
   },
 });
 
-// Initialize Firebase
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDzKddQzpi0Tb5wIgIq85Bco4RIdnFnffA",
-//   authDomain: "englishaide-ef29c.firebaseapp.com",
-//   databaseURL: "https://englishaide-ef29c.firebaseio.com",
-//   projectId: "englishaide-ef29c",
-//   storageBucket: "englishaide-ef29c.appspot.com",
-//   messagingSenderId: "1070658039566"
-// };
-// firebase.initializeApp(firebaseConfig);
 

@@ -24,7 +24,9 @@ export default class HomeScreen extends React.Component {
   };
 
   render() {
+    var count = 0;
     return (
+
       <ScrollView style={styles.container}>
       <View>
         <Image
