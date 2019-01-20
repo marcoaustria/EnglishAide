@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     homeText:{
         textAlign:'center',
         fontSize:50,
-        color: 'black'
+        color: '#48bf91'
     },
 
     contentContainer: {
