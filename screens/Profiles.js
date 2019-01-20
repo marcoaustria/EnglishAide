@@ -39,7 +39,7 @@ class Profiles extends Component{
                 />
                 <Text style={styles.profiles} onPress={this.test}>{this.state.userSearch} {this.state.count}</Text>
 
-                <Button style={styles.button} title='goback' onPress={profileChosen}></Button>
+                <Button style={styles.button} title='>' onPress={profileChosen}></Button>
 
             </View>
         )
@@ -53,19 +53,23 @@ const styles = StyleSheet.create({
    
 
     profileContainer:{  
-        padding:10,
+        paddingTop:20,
+        paddingBottom: 20,
         flexDirection:'row',
-        borderWidth:1
-      },
-      profiles:{
+        marginTop: 5,
         borderStyle: 'solid',
-        borderColor: '#ffb900',
-        color:'#ffb900',
-        fontSize:26
+        borderTopWidth: 1,
+        borderColor: '#CFCFCF'
+      },
+      profiles:{ 
+        fontSize:35,
+        paddingLeft:30,
+        paddingTop: 40
+
       },
       profileIcon: {
-        width: 60,
-        height: 60,
+        width: 100,
+        height: 100,
         resizeMode: 'contain',
       },
     })
