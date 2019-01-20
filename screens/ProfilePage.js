@@ -31,7 +31,7 @@ export default class ProfilePage extends React.Component {
                 <Text style={styles.profileName}>John Doe</Text>
 
                 <Image
-          style={{width:'100%', height: '100%', resizeMode:"center", marginTop:-100}}
+          style={{width:'90%', height: '90%', resizeMode:"center", marginTop:-150, paddingBottom:-30}}
           source={require('../assets/images/guy-icon.png')}
         />
 
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
 
 
     container:{
-        padding:20,
+        padding:30,
         alignItems:'center',
         marginTop:'20%'
     },
@@ -72,8 +72,9 @@ const styles = StyleSheet.create({
 
     profileBody:{
         textAlign: 'center',
-    marginTop:-30,
-    fontSize: 20
+    marginTop:5,
+    fontSize: 20,
+    padding: 0
     },
     buttonContainer:{
         width:100,
