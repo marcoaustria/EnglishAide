@@ -38,10 +38,9 @@ import {GiftedChat, Actions, Bubble, SystemMessage} from 'react-native-gifted-ch
 import CustomActions from '../CustomActions';
 import CustomView from '../CustomView';
 var counter = 0;
-export default class LinksScreen extends React.Component {
 
 export default class LinksScreen extends React.Component {
-  
+
   static navigationOptions = {
     title: 'EnglishAide',
   };
