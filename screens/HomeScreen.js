@@ -1,4 +1,7 @@
 import React from 'react';
+import { ExpoLinksView } from '@expo/samples';
+
+
 import {
   Image,
   Platform,
@@ -13,83 +16,124 @@ import { MonoText } from '../components/StyledText';
 import { getReminderAsync } from 'expo/build/Calendar';
 import Profiles from './Profiles'
 
+
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    header: null,
+    title: 'EnglishAide',
   };
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.homeContainer}>
-          <Text style={styles.homeText}>EnglishAide</Text>
-        </View>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+
+      <ScrollView style={styles.container}>
+        {/* Go ahead and delete ExpoLinksView and replace it with your
+           * content, we just wanted to provide you with some helpful links */}
        
-        <View>
-          <Profiles/>
-          <Profiles/>
-          <Profiles/>
-          <Profiles/>
+       <Text style={styles.topicText}>
+          Topic of the Day
+          </Text>
+      <Text style={styles.topicBody}>What is your favorite movie and why?</Text>
+      
+      <Text style={styles.teacherText}>
+           Teacher Suggestions
+          </Text>
+      <Text style={styles.teacherBody}>Susie can focus on her listening this week, maybe send her some voice notes and have her try to write them down!</Text>
 
-        </View>
-          {/* <View style={styles.welcomeContainer}>
-            <Image
-              source={
-                __DEV__
-                  ? require('../assets/images/robot-dev.png')
-                  : require('../assets/images/robot-prod.png')
-              }
-              style={styles.welcomeImage}
-            />
-          </View>
-          <View style={styles.getStartedContainer}>
-            {this._maybeRenderDevelopmentModeWarning()}
-            <Text style={styles.getStartedText}>Get started by opening</Text>
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-              <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
-            </View>
-            <Text style={styles.getStartedText}>
-              Change this text and your app will automatically reload.
-            </Text>
-          </View>
-          <View style={styles.helpContainer}>
-            <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
-            </TouchableOpacity>
-          </View> */}
-        </ScrollView>
 
-      </View>
+
+      </ScrollView>
     );
   }
-
-
-  test = () => {
-    // WebBrowser.openBrowserAsync('https://docs.expo.io/versions/latest/guides/development-mode');
-    console.log("test")
-  };
-
-  _handleHelpPress = () => {
-    WebBrowser.openBrowserAsync(
-      'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
-    );
-  };
 }
 
 const styles = StyleSheet.create({
 
-  homeContainer:{
-    paddingTop:20
-  },
-  homeText:{
-    textAlign:'center',
-    fontSize:20
+
+  topicText:{
+    textAlign: 'left',
+    fontSize: 40,
+    paddingTop:20,
+    marginTop: '80%',
+    paddingLeft: 30,
+    fontWeight: 'bold',
+    color: '#0076be'
+  }
+,
+  topicBody:{
+    textAlign: 'left',
+    paddingTop:10,
+    paddingLeft: 30,
+    fontSize: 20
+  }
+,
+
+  container: {
+    flex: 1,
+    paddingTop: 15,
+    backgroundColor: '#ddf7ff'
   },
 
-  contentContainer: {
-    paddingTop: 30,
-  },  
+
+  teacherText: {
+    textAlign: 'left',
+    fontSize: 40,
+    paddingTop:30,
+    paddingLeft: 30,
+    fontWeight: 'bold',
+    color: '#48bf91'
+  },
+
+  teacherBody: {
+    textAlign: 'left',
+    paddingTop: 10,
+    fontSize: 20,
+    paddingLeft: 30,
+    paddingRight: 30
+  }
+
+
+
+
+});
+
+
+// const styles = StyleSheet.create({
+
+//   homeContainer:{
+//     paddingTop: Platform.OS === 'ios'
+//     ? 43 : 20
+
+  
+//   },
+//   homeText:{
+//     textAlign:'center',
+//     fontSize:20,
+//     fontWeight: 'bold',
+//     fontFamily: 'Times New Roman' 
+
+//   },
+
+//   contentContainer: {
+//     marginTop: Platform.OS === 'ios'
+//     ? -20 : 0,
+  
+//     paddingTop: 30,
+//   },  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // container: {
   //   flex: 1,
   //   backgroundColor: '#fff',
@@ -168,4 +212,4 @@ const styles = StyleSheet.create({
   //   fontSize: 14,
   //   color: '#2e78b7',
   // },
-});
+

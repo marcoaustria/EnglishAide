@@ -38,7 +38,12 @@ import {GiftedChat, Actions, Bubble, SystemMessage} from 'react-native-gifted-ch
 import CustomActions from '../CustomActions';
 import CustomView from '../CustomView';
 
-export default class Example extends React.Component {
+export default class LinksScreen extends React.Component {
+  
+  static navigationOptions = {
+    title: 'EnglishAide',
+  };
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -232,6 +237,11 @@ export default class Example extends React.Component {
 
   render() {
     return (
+      <ScrollView style={styles.container}>
+        {/* Go ahead and delete ExpoLinksView and replace it with your
+           * content, we just wanted to provide you with some helpful links */}
+      </ScrollView>
+      
       <GiftedChat
         messages={this.state.messages}
         onSend={this.onSend}
@@ -249,9 +259,7 @@ export default class Example extends React.Component {
         renderCustomView={this.renderCustomView}
         renderFooter={this.renderFooter}
       />
-    );
-  }
-}
+
 
 const styles = StyleSheet.create({
   footerContainer: {
@@ -263,6 +271,10 @@ const styles = StyleSheet.create({
   footerText: {
     fontSize: 14,
     color: '#aaa',
+  container: {
+    flex: 1,
+    paddingTop: 15,
+    backgroundColor: '#ddf7ff',
   },
 });
 

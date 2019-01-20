@@ -15,6 +15,7 @@
     "@expo/vector-icons": "^9.0.0",
     "expo": "^32.0.0",
     "link": "^0.1.5",
+    "firebase": "^5.8.0",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-camera": "^1.9.0",
@@ -30,5 +31,19 @@
     "babel-preset-expo": "^5.0.0",
     "jest-expo": "^32.0.0"
   },
-  "private": true
+  "private": true,
+  "name": "englishaide",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcoaustria/EnglishAide.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcoaustria/EnglishAide/issues"
+  },
+  "homepage": "https://github.com/marcoaustria/EnglishAide#readme",
+  "description": ""
 }
