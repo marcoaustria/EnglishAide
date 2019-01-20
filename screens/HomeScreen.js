@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component }  from 'react';
 import { ExpoLinksView } from '@expo/samples';
 
 
@@ -10,6 +10,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  AppRegistry
 } from 'react-native';
 import { WebBrowser } from 'expo';
 import { MonoText } from '../components/StyledText';
@@ -24,8 +25,16 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return (
-
       <ScrollView style={styles.container}>
+      <View>
+        <Image
+          style={{width: '100%', height: '100%', resizeMode: 'center', marginTop: -20 }}
+          source={require('../assets/images/english-aide-icon.png')}
+        />
+      </View>
+
+      
+     
         {/* Go ahead and delete ExpoLinksView and replace it with your
            * content, we just wanted to provide you with some helpful links */}
        
@@ -48,12 +57,19 @@ export default class HomeScreen extends React.Component {
 
 const styles = StyleSheet.create({
 
+  // imageStyle: {
+  //   width: '150%',
+  //   height: '50%',
+  //   resizeMode: 'center'
+
+  // },
+
 
   topicText:{
     textAlign: 'left',
     fontSize: 40,
     paddingTop:20,
-    marginTop: '75%',
+    marginTop: -20,
     paddingLeft: 30,
     fontWeight: 'bold',
     color: '#0076be'
