@@ -37,7 +37,7 @@ export default class HomeScreen extends React.Component {
       <Text style={styles.teacherText}>
            Teacher Suggestions
           </Text>
-      <Text style={styles.teacherBody}>Susie can focus on her listening this week, maybe send her some voice notes and have her try to write them down!</Text>
+      <Text style={styles.teacherBody}>Miss Frizzle says: {"\n"}{"\n"}"Susie can focus on her listening this week, maybe send her some voice notes and have her try to write them down!"</Text>
 
 
 
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     fontSize: 40,
     paddingTop:20,
-    marginTop: '80%',
+    marginTop: '75%',
     paddingLeft: 30,
     fontWeight: 'bold',
     color: '#0076be'
