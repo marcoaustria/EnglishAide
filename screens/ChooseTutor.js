@@ -76,13 +76,15 @@ const styles = StyleSheet.create({
         height:'100%',
         alignItems:'center',
         marginTop:'10%',
+        backgroundColor: '#DDF7FF'
     },
     homeContainer:{
-        paddingTop:20
+        paddingTop:20 
     },
     homeText:{
         textAlign:'center',
-        fontSize:20
+        fontSize:50,
+        color: 'black'
     },
 
     contentContainer: {

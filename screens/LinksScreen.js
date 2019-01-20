@@ -195,14 +195,29 @@ export default class LinksScreen extends React.Component {
     );
   }
 
-  //other person messages 
+
     renderBubble(props) {
     return (
       <Bubble
         {...props}
         wrapperStyle={{
           left: {
-            backgroundColor: '#f0f0f0',
+            backgroundColor: '#F5F5F5',
+            paddingTop: 10,
+            paddingBottom: 10,
+            paddingLeft: 10,
+            paddingRight: 10,
+            maxWidth: 220,
+            borderBottomLeftRadius: 0
+          },
+          right: {
+            backgroundColor: '#4db4d7',
+            paddingTop: 10,
+            paddingBottom: 10,
+            paddingLeft: 10,
+            paddingRight: 10,
+            maxWidth: 220,
+            borderTopRightRadius: 0
           }
         }}
       />
@@ -214,7 +229,7 @@ export default class LinksScreen extends React.Component {
       <SystemMessage
         {...props}
         containerStyle={{
-          marginBottom: 15,
+          marginBottom: 10,
         }}
         textStyle={{
           fontSize: 14,
