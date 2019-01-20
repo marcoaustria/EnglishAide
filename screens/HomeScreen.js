@@ -25,10 +25,11 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return (
+
       <ScrollView style={styles.container}>
-      <View>
+      <View style={{alignItems:'center'}}>
         <Image
-          style={{width: '100%', height: '100%', resizeMode: 'center', marginTop: -20 }}
+          style={{width:300, height: 250, resizeMode:"center", marginTop:-10}}
           source={require('../assets/images/english-aide-icon.png')}
         />
       </View>
@@ -104,7 +105,8 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     fontSize: 20,
     paddingLeft: 30,
-    paddingRight: 30
+    paddingRight: 30,
+    marginBottom:60
   }
 
 
