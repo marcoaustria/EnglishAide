@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, View, Image } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 
 export default class SettingsScreen extends React.Component {
@@ -10,8 +10,16 @@ export default class SettingsScreen extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
-        {/* Go ahead and delete ExpoLinksView and replace it with your
-           * content, we just wanted to provide you with some helpful links */}
+
+      < View style={{alignItems:'center'}}>
+        <Image
+          style={{width:'100%', height: '100%', resizeMode:"center", marginTop:150}}
+          source={require('../assets/images/profile-edit.png')}
+        />
+      </View>
+
+        
+
       </ScrollView>
     );
   }

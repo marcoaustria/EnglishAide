@@ -26,14 +26,21 @@ export default class Login extends React.Component {
             this.props.hasChosenChange(false);
         }        
         return(
+            <View style={styles.logoImage}>
+            <Image
+            style={{width:'100%', height: '100%', resizeMode:"center"}}
+            source={require('../assets/images/guy-icon.png')}
+            />
+            </View>,
+
             <View style={styles.container}>
                 <Text style={styles.loginText}>Login</Text>
-                <Text>Are you a mentor or a student?</Text>
-                <View style={styles.buttonContainer}>
-                    <Button onPress={isMentor} title="Mentor" style={styles.buttonText} ></Button>
+                <Text style = {styles.loginBody}>Are you a mentor or a student?</Text>
+                <View style={styles.mentorButtonContainer}>
+                    <Button onPress={isMentor} title="Mentor"></Button>
                 </View>
-                <View style={styles.buttonContainer}>
-                    <Button onPress={isStudent} title="Student"></Button>
+                <View style={styles.studentButtonContainer}>
+                    <Button onPress={isStudent} title="Student" ></Button>
                 </View>
             </View>
         )
@@ -45,20 +52,37 @@ export default class Login extends React.Component {
 
 const styles = StyleSheet.create({
     container:{
-        padding:20,
         alignItems:'center',
-        marginTop:'40%'
+        marginTop:'50%'
     },
     loginText:{
+        marginTop:0,
         fontSize:70,
-        textAlign: 'center'
+        textAlign: 'center',
+        color: '#0076be'
     },
-    buttonContainer:{
+    loginBody:{
+        marginTop:150,
+        fontSize: 25
+    },
+
+    mentorButtonContainer:{
         width:100,
         marginTop:'10%',
         // paddingTop:'10%'
 
-    }
+    },
 
+    studentButtonContainer:{
+        width:100,
+        marginTop:'10%',
+        // paddingTop:'10%'
+
+    },
+    
+
+    logoImage: {
+        paddingTop:10
+    }
     
 })
