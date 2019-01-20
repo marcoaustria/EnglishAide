@@ -3,7 +3,12 @@ import ReactNative from "react-native";
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
-import * as firebase from 'firebase';
+
+// import * as firebase from 'firebase';
+import {GiftedChat, Actions, Bubble, SystemMessage} from 'react-native-gifted-chat';
+import CustomActions from './CustomActions';
+import CustomView from './CustomView';
+
 
 export default class App extends React.Component {
   state = {
@@ -64,12 +69,13 @@ const styles = StyleSheet.create({
 });
 
 // Initialize Firebase
-const firebaseConfig = {
-  apiKey: "AIzaSyDzKddQzpi0Tb5wIgIq85Bco4RIdnFnffA",
-  authDomain: "englishaide-ef29c.firebaseapp.com",
-  databaseURL: "https://englishaide-ef29c.firebaseio.com",
-  projectId: "englishaide-ef29c",
-  storageBucket: "englishaide-ef29c.appspot.com",
-  messagingSenderId: "1070658039566"
-};
-firebase.initializeApp(firebaseConfig);
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDzKddQzpi0Tb5wIgIq85Bco4RIdnFnffA",
+//   authDomain: "englishaide-ef29c.firebaseapp.com",
+//   databaseURL: "https://englishaide-ef29c.firebaseio.com",
+//   projectId: "englishaide-ef29c",
+//   storageBucket: "englishaide-ef29c.appspot.com",
+//   messagingSenderId: "1070658039566"
+// };
+// firebase.initializeApp(firebaseConfig);
+
