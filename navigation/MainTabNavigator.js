@@ -1,11 +1,13 @@
 import React from 'react';
-import { Platform } from 'react-native';
+import { Platform, Dimensions } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+
+var {height, width} = Dimensions.get('window');
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -61,10 +63,29 @@ export default createBottomTabNavigator({
   SettingsStack,
 },
 {
-  navBar: {
-    backgroundColor: '#5B29C1',
-    borderBottomColor: '#48209A',
-    borderBottomWidth: 1
+  tabBarOptions: {
+  
+    activeTintColor: "#ffff" ,
+    inactiveTintColor: "#A9A9A9",
+
+ 
+ 
+    showIcon: true,
+  
+  labelStyle: {
+    fontSize: 12,
+
+  },
+  tabStyle: {
+    width: (1/3)*width,
+    
+    
+  },
+  style: {
+    backgroundColor: "#0076be",
+  
+  }
+  
   }
 
 });

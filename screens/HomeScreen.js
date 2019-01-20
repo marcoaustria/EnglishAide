@@ -1,4 +1,5 @@
 import React from 'react';
+import { ExpoLinksView } from '@expo/samples';
 
 
 import {
@@ -16,98 +17,140 @@ import { getReminderAsync } from 'expo/build/Calendar';
 import Profiles from './Profiles'
 import { BorderlessButton } from 'react-native-gesture-handler';
 
+// export default class HomeScreen extends React.Component {
+//   static navigationOptions = {
+//     header: null,
+   
+//   };
+
+//   render() {
+//     return (
+//       <View style={styles.container}>
+//         {/* <View style={styles.homeContainer}>
+//           <Text style={styles.homeText}>EnglishAide</Text>
+//         </View> */}
+//         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+       
+//         {/* <View>
+//           <Profiles/>
+//           <Profiles/>
+//           <Profiles/>
+//           <Profiles/>
+
+//         </View> */}
+//           {/* {/* <View style={styles.welcomeContainer}>
+//             <Image
+//               source={
+//                 __DEV__
+//                   ? require('../assets/images/robot-dev.png')
+//                   : require('../assets/images/robot-prod.png')
+//               }
+//               style={styles.welcomeImage}
+//             />
+//           </View>
+
+//           <View style={styles.getStartedContainer}>
+//             {this._maybeRenderDevelopmentModeWarning()}
+
+//             <Text style={styles.getStartedText}>Get started by opening</Text> */}
+
+//             <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
+//               <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
+//             </View>
+
+//             {/* <Text style={styles.getStartedText}>
+//               Change this text and your app will automatically reload.
+//             </Text>
+//           </View>
+
+//           // <View style={styles.helpContainer}>
+//           //   <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
+//           //     <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
+//           //   </TouchableOpacity>
+//           // </View> */} 
+//         </ScrollView>
+
+//       </View>
+//     );
+//   }
+
+
+//   test = () => {
+//     // WebBrowser.openBrowserAsync('https://docs.expo.io/versions/latest/guides/development-mode');
+//     console.log("test")
+//   };
+
+//   _handleHelpPress = () => {
+//     WebBrowser.openBrowserAsync(
+//       'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
+//     );
+//   };
+// }
+
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    header: null,
-   
+    title: 'EnglishAide',
   };
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.homeContainer}>
-          <Text style={styles.homeText}>EnglishAide</Text>
-        </View>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-       
-        <View>
-          <Profiles/>
-          <Profiles/>
-          <Profiles/>
-          <Profiles/>
-
-        </View>
-          {/* <View style={styles.welcomeContainer}>
-            <Image
-              source={
-                __DEV__
-                  ? require('../assets/images/robot-dev.png')
-                  : require('../assets/images/robot-prod.png')
-              }
-              style={styles.welcomeImage}
-            />
-          </View>
-
-          <View style={styles.getStartedContainer}>
-            {this._maybeRenderDevelopmentModeWarning()}
-
-            <Text style={styles.getStartedText}>Get started by opening</Text>
-
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-              <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
-            </View>
-
-            <Text style={styles.getStartedText}>
-              Change this text and your app will automatically reload.
-            </Text>
-          </View>
-
-          <View style={styles.helpContainer}>
-            <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
-            </TouchableOpacity>
-          </View> */}
-        </ScrollView>
-
-      </View>
+      <ScrollView style={styles.container}>
+        {/* Go ahead and delete ExpoLinksView and replace it with your
+           * content, we just wanted to provide you with some helpful links */}
+        <ExpoLinksView />
+      </ScrollView>
     );
   }
-
-
-  test = () => {
-    // WebBrowser.openBrowserAsync('https://docs.expo.io/versions/latest/guides/development-mode');
-    console.log("test")
-  };
-
-  _handleHelpPress = () => {
-    WebBrowser.openBrowserAsync(
-      'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
-    );
-  };
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 15,
+    backgroundColor: '#fff',
+    
+  },
+  
+});
 
-  homeContainer:{
-    paddingTop: Platform.OS === 'ios'
-    ? 43 : 20
+
+// const styles = StyleSheet.create({
+
+//   homeContainer:{
+//     paddingTop: Platform.OS === 'ios'
+//     ? 43 : 20
 
   
-  },
-  homeText:{
-    textAlign:'center',
-    fontSize:20,
-    fontWeight: 'bold',
-    fontFamily: 'Times New Roman' 
+//   },
+//   homeText:{
+//     textAlign:'center',
+//     fontSize:20,
+//     fontWeight: 'bold',
+//     fontFamily: 'Times New Roman' 
 
-  },
+//   },
 
-  contentContainer: {
-    marginTop: Platform.OS === 'ios'
-    ? -20 : 0,
+//   contentContainer: {
+//     marginTop: Platform.OS === 'ios'
+//     ? -20 : 0,
   
-    paddingTop: 30,
-  },  
+//     paddingTop: 30,
+//   },  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // container: {
   //   flex: 1,
   //   backgroundColor: '#fff',
@@ -186,4 +229,4 @@ const styles = StyleSheet.create({
   //   fontSize: 14,
   //   color: '#2e78b7',
   // },
-});
+//});
