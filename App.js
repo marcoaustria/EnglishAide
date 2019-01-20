@@ -3,11 +3,13 @@ import ReactNative from "react-native";
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
+
 // import * as firebase from 'firebase';
 import {GiftedChat, Actions, Bubble, SystemMessage} from 'react-native-gifted-chat';
 import CustomActions from './CustomActions';
 import CustomView from './CustomView';
 // import server from './server';
+
 
 export default class App extends React.Component {
   state = {
@@ -77,3 +79,4 @@ const styles = StyleSheet.create({
 //   messagingSenderId: "1070658039566"
 // };
 // firebase.initializeApp(firebaseConfig);
+
