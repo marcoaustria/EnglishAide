@@ -34,6 +34,11 @@ export default class ChooseTutor extends React.Component {
             e.preventDefault();
             this.props.goBack();
         }
+
+        profileChosen = (e)=>{
+            e.preventDefault();
+            this.props.profileChosen();
+        }
         return(
             <View style={styles.container}>
                 <Button title='back' onPress={goBack}></Button>
@@ -49,7 +54,7 @@ export default class ChooseTutor extends React.Component {
                     <Profiles count={count++} userSearch={this.state.userSearch}/>
                     <Profiles count={count++} userSearch={this.state.userSearch}/>
                     <Profiles count={count++} userSearch={this.state.userSearch}/>
-                    <Profiles count={count++} userSearch={this.state.userSearch}/>
+                    <Profiles count={count++} userSearch={this.state.userSearch} onPress={this.profileChosen}/>
         
                 </View>
                 </ScrollView>

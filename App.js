@@ -16,10 +16,12 @@ export default class App extends React.Component {
     this.state={
       isLoadingComplete: false,
       hasChosen: false,
-      isMentor:false
+      isMentor:false,
+      profileChose:false
     }
     this.hasChosenChange = this.hasChosenChange.bind(this);
     this.goBack = this.goBack.bind(this);
+    this.profileChosen=this.profileChosen(this);
   }
   
   hasChosenChange = (isMentor)=>{
@@ -31,6 +33,12 @@ export default class App extends React.Component {
   goBack = ()=>{
     this.setState({
       hasChosen:false
+    })
+  }
+
+  profileChosen=()=>{
+    this.setState({
+      profileChosen:true
     })
   }
 
@@ -48,13 +56,21 @@ export default class App extends React.Component {
         return (
           <View style={styles.container}>
             {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-            <Login hasChosenChange={this.hasChosenChange } />
+            {/* <Login hasChosenChange={this.hasChosenChange} /> */}
+            <AppNavigator/>
+
           </View>
         );
       }else{
-        return(
-          <ChooseTutor isMentor={this.state.isMentor} goBack={this.goBack}/>
-        )
+        if(!this.state.profileChosen){
+          return(
+            <ChooseTutor isMentor={this.state.isMentor} goBack={this.goBack} profileChosen={this.profileChosen} />
+          )
+        }else{
+          return(
+            <AppNavigator/>
+          )
+        }
       }
     }
   }
