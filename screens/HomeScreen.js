@@ -19,6 +19,7 @@ export default class HomeScreen extends React.Component {
   };
 
   render() {
+    var count = 0;
     return (
       <View style={styles.container}>
         <View style={styles.homeContainer}>
@@ -27,10 +28,10 @@ export default class HomeScreen extends React.Component {
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
        
         <View>
-          <Profiles/>
-          <Profiles/>
-          <Profiles/>
-          <Profiles/>
+          <Profiles count={count++}/>
+          <Profiles count={count++}/>
+          <Profiles count={count++}/>
+          <Profiles count={count++}/>
 
         </View>
           {/* <View style={styles.welcomeContainer}>
