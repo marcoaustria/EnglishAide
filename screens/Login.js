@@ -26,12 +26,22 @@ export default class Login extends React.Component {
             this.props.hasChosenChange(false);
         }        
         return(
+
+            // <Image
+            // source={
+                // __DEV__
+                // ? require('../assets/images/robot-dev.png')
+                // : require('../assets/images/robot-prod.png')
+            // }
+            // style={styles.profileIcon}  
+            // />
+            <View>
             <View style={styles.logoImage}>
-            <Image
-            style={{width:'100%', height: '100%', resizeMode:"center"}}
-            source={require('../assets/images/guy-icon.png')}
-            />
-            </View>,
+                <Image
+                    style={{width:300, height:75}}
+                    source={require('../assets/images/logoname.png')}
+                />
+            </View>
 
             <View style={styles.container}>
                 <Text style={styles.loginText}>Login</Text>
@@ -43,6 +53,7 @@ export default class Login extends React.Component {
                     <Button onPress={isStudent} title="Student" ></Button>
                 </View>
             </View>
+            </View>
         )
     }
 
@@ -53,22 +64,21 @@ export default class Login extends React.Component {
 const styles = StyleSheet.create({
     container:{
         alignItems:'center',
-        marginTop:'50%'
     },
     loginText:{
-        marginTop:0,
+        marginTop:30,
         fontSize:70,
         textAlign: 'center',
         color: '#0076be'
     },
     loginBody:{
-        marginTop:150,
+        marginTop:80,
         fontSize: 25
     },
 
     mentorButtonContainer:{
         width:100,
-        marginTop:'10%',
+        marginTop:10,
         // paddingTop:'10%'
 
     },
@@ -82,7 +92,9 @@ const styles = StyleSheet.create({
     
 
     logoImage: {
-        paddingTop:10
+        paddingTop:30,
+        alignItems:'center',
+        width:'100%'
     }
     
 })

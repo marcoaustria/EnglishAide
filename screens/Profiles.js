@@ -15,7 +15,8 @@ class Profiles extends Component{
         super(props)
         this.state={
             count:props.count,
-            userSearch:props.userSearch
+            userSearch:props.userSearch,
+            userLast:props.userLast
         }
         console.log(this.state.userSearch)
         // this.test = this.test.bind(this)
@@ -37,7 +38,7 @@ class Profiles extends Component{
 
                 style={styles.profileIcon}  
                 />
-                <Text style={styles.profiles} onPress={this.test}>{this.state.userSearch} {this.state.count}</Text>
+                <Text style={styles.profiles} onPress={this.test}>{this.state.userSearch} {this.state.userLast}</Text>
 
                 <Button style={styles.button} title='>' onPress={profileChosen}></Button>
 
@@ -62,7 +63,8 @@ const styles = StyleSheet.create({
         borderColor: '#CFCFCF'
       },
       profiles:{ 
-        fontSize:35,
+        width:200,
+        fontSize:25,
         paddingLeft:30,
         paddingTop: 40
 

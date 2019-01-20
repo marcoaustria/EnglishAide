@@ -13,6 +13,9 @@ import { WebBrowser } from 'expo';
 import { MonoText } from '../components/StyledText';
 import { getReminderAsync } from 'expo/build/Calendar';
 import Profiles from './Profiles'
+import mentorData from '../data/Mentors.json'
+import studentData from '../data/Students.json'
+import { database } from 'firebase';
 
 export default class ChooseTutor extends React.Component {
     
@@ -29,6 +32,7 @@ export default class ChooseTutor extends React.Component {
     }
 
     render(){
+        console.log(mentorData);
         var count = 0;
         goBack = (e)=>{
             e.preventDefault();
@@ -39,6 +43,26 @@ export default class ChooseTutor extends React.Component {
             e.preventDefault();
             this.props.profileChosen();
         }
+        
+        var chooseList = [];
+        if(this.state.isMentor){
+            for(i = 0; i < mentorData.length; i++){
+                chooseList.push(
+                    <View>
+                        <Profiles userSearch={mentorData[i].fname} userLast={mentorData[i].lname}/>
+                    </View>
+                )
+            };
+        }else {
+            for(i = 0; i < mentorData.length; i++){
+                chooseList.push(
+                    <View>
+                        <Profiles userSearch={studentData[i].fname} userLast={studentData[i].lname}/>
+                    </View>
+                )
+            };
+        }
+
         return(
             <View style={styles.container}>
                 <Button title='back' onPress={goBack}></Button>
@@ -51,18 +75,14 @@ export default class ChooseTutor extends React.Component {
                 <ScrollView style={styles.display} contentContainerStyle={styles.contentContainer}>
                 
                 <View>
-                    <Profiles count={count++} userSearch={this.state.userSearch}>
-
-                    </Profiles>
-                    <Profiles count={count++} userSearch={this.state.userSearch}/>
-                    <Profiles count={count++} userSearch={this.state.userSearch}/>
-                    <Profiles count={count++} userSearch={this.state.userSearch} onPress={this.profileChosen}/>
-        
+                    {/* <Profiles count={count++} userSearch={mentorData[0].fname}>
+                    <Profiles count={count++} userSearch={mentorData[1].fname}/>
+                    <Profiles count={count++} userSearch={mentorData[2].fname}/>
+                    <Profiles count={count++} userSearch={mentorData[3].fname} onPress={this.profileChosen}/> */}
+                    {chooseList}
                 </View>
                 </ScrollView>
             </View>
-
-            
         )
     }
 

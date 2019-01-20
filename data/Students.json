@@ -1,0 +1,38 @@
+[
+    {
+        "_id": 1,
+        "fname": "Albert",
+        "lname": "Gator",
+        "icon": "",
+        "Languages": [
+            "Spanish", "Portuguese"
+        ]
+    },
+    {
+        "_id": 2,
+        "fname": "Alberta",
+        "lname": "Gator",
+        "icon": "",
+        "Languages": [
+            "Mandarin"
+        ]
+    },
+    {
+        "_id": 3,
+        "fname": "Conny",
+        "lname": "Wahlberg",
+        "icon": "",
+        "Languages": [
+            "German"
+        ]
+    },
+    {
+        "_id": 4,
+        "fname": "Nyango-Starr",
+        "lname": "Cat",
+        "icon": "",
+        "Languages": [
+            "Italian"
+        ]
+    }
+]
