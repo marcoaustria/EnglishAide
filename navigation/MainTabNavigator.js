@@ -66,7 +66,7 @@ export default createBottomTabNavigator({
   tabBarOptions: {
   
     activeTintColor: "#ffff" ,
-    inactiveTintColor: "#A9A9A9",
+    inactiveTintColor: "#0076be",
 
  
  
@@ -74,7 +74,7 @@ export default createBottomTabNavigator({
   
   labelStyle: {
     fontSize: 12,
-
+    
   },
   tabStyle: {
     width: (1/3)*width,
@@ -82,7 +82,7 @@ export default createBottomTabNavigator({
     
   },
   style: {
-    backgroundColor: "#0076be",
+    backgroundColor: "#4db4d7",
   
   }
   

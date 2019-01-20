@@ -97,20 +97,71 @@ export default class HomeScreen extends React.Component {
       <ScrollView style={styles.container}>
         {/* Go ahead and delete ExpoLinksView and replace it with your
            * content, we just wanted to provide you with some helpful links */}
-        <ExpoLinksView />
+       
+       <Text style={styles.topicText}>
+          Topic of the Day
+          </Text>
+      <Text style={styles.topicBody}>What is your favorite movie and why?</Text>
+      
+      <Text style={styles.teacherText}>
+           Teacher Suggestions
+          </Text>
+      <Text style={styles.teacherBody}>Susie can focus on her listening this week, maybe send her some voice notes and have her try to write them down!</Text>
+
+
+
       </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
+
+  topicText:{
+    textAlign: 'left',
+    fontSize: 40,
+    paddingTop:20,
+    marginTop: '80%',
+    paddingLeft: 30,
+    fontWeight: 'bold',
+    color: '#0076be'
+  }
+,
+  topicBody:{
+    textAlign: 'left',
+    paddingTop:10,
+    paddingLeft: 30,
+    fontSize: 20
+  }
+,
+
   container: {
     flex: 1,
     paddingTop: 15,
-    backgroundColor: '#fff',
-    
+    backgroundColor: '#ddf7ff'
   },
-  
+
+
+  teacherText: {
+    textAlign: 'left',
+    fontSize: 40,
+    paddingTop:30,
+    paddingLeft: 30,
+    fontWeight: 'bold',
+    color: '#48bf91'
+  },
+
+  teacherBody: {
+    textAlign: 'left',
+    paddingTop: 10,
+    fontSize: 20,
+    paddingLeft: 30,
+    paddingRight: 30
+  }
+
+
+
+
 });
 
 
