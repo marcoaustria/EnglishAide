@@ -229,3 +229,8 @@ const styles = StyleSheet.create({
   //   color: '#2e78b7',
   // },
 
+  contentContainer: {
+    paddingTop: 30,
+  },  
+  
+});

@@ -8,6 +8,7 @@ import AppNavigator from './navigation/AppNavigator';
 import {GiftedChat, Actions, Bubble, SystemMessage} from 'react-native-gifted-chat';
 import CustomActions from './CustomActions';
 import CustomView from './CustomView';
+// import server from './server';
 
 
 export default class App extends React.Component {

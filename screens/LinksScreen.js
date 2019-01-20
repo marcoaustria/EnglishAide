@@ -37,6 +37,8 @@ import {
 import {GiftedChat, Actions, Bubble, SystemMessage} from 'react-native-gifted-chat';
 import CustomActions from '../CustomActions';
 import CustomView from '../CustomView';
+var counter = 0;
+export default class LinksScreen extends React.Component {
 
 export default class LinksScreen extends React.Component {
   
@@ -120,16 +122,24 @@ export default class LinksScreen extends React.Component {
       }
     }
 
-    setTimeout(() => {
+     setTimeout(() => {
       if (this._isMounted === true) {
         if (messages.length > 0) {
-          if (messages[0].image) {
-            this.onReceive('Nice picture!');
-          } else if (messages[0].location) {
-            this.onReceive('My favorite place');
-          } else {
+          if (counter == 0) {
+            this.onReceive('¿Hola, como estás?');
+            counter++;
+          }
+          else if(counter ==1){
+            this.onReceive('Okay send me your homework!')
+            counter++;
+          }
+          else if (messages[0].image) {
+           this.onReceive('Okay! I will take a look at it!');
+          counter++;
+          } 
+          else {
             if (!this._isAlright) {
-              this.onReceive('¿Hola, como estás?');
+              this.onReceive('Do you need help');
               this._isAlright = true;
             }
           }
