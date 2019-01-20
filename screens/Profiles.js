@@ -3,7 +3,8 @@ import {
     Text,
     Image,
     View,
-    StyleSheet
+    StyleSheet,
+    Button
     
 } from 'react-native'
 var count =0;
@@ -32,9 +33,14 @@ class Profiles extends Component{
                     ? require('../assets/images/robot-dev.png')
                     : require('../assets/images/robot-prod.png')
                 }
+
+
                 style={styles.profileIcon}  
                 />
                 <Text style={styles.profiles} onPress={this.test}>{this.state.userSearch} {this.state.count}</Text>
+
+                <Button style={styles.button} title='goback' onPress={profileChosen}></Button>
+
             </View>
         )
     }
@@ -43,6 +49,8 @@ class Profiles extends Component{
 
 
 const styles = StyleSheet.create({
+
+   
 
     profileContainer:{  
         padding:10,

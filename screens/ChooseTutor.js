@@ -51,7 +51,9 @@ export default class ChooseTutor extends React.Component {
                 <ScrollView style={styles.display} contentContainerStyle={styles.contentContainer}>
                 
                 <View>
-                    <Profiles count={count++} userSearch={this.state.userSearch}/>
+                    <Profiles count={count++} userSearch={this.state.userSearch}>
+
+                    </Profiles>
                     <Profiles count={count++} userSearch={this.state.userSearch}/>
                     <Profiles count={count++} userSearch={this.state.userSearch}/>
                     <Profiles count={count++} userSearch={this.state.userSearch} onPress={this.profileChosen}/>

@@ -8,6 +8,7 @@ import ChooseTutor from './screens/ChooseTutor';
 import {GiftedChat, Actions, Bubble, SystemMessage} from 'react-native-gifted-chat';
 import CustomActions from './CustomActions';
 import CustomView from './CustomView';
+import ProfilePage from './screens/ProfilePage';
 
 export default class App extends React.Component {
   
@@ -17,11 +18,15 @@ export default class App extends React.Component {
       isLoadingComplete: false,
       hasChosen: false,
       isMentor:false,
-      profileChose:false
+      profileChose:false,
+      profileFinalized:false
+
     }
     this.hasChosenChange = this.hasChosenChange.bind(this);
     this.goBack = this.goBack.bind(this);
-    this.profileChosen=this.profileChosen(this);
+    this.profileChosen=this.profileChosen.bind(this);
+    this.setProfileFinal=this.setProfileFinal.bind(this);
+
   }
   
   hasChosenChange = (isMentor)=>{
@@ -38,9 +43,15 @@ export default class App extends React.Component {
 
   profileChosen=()=>{
     this.setState({
-      profileChosen:true
+      profileChose:true
     })
   }
+  setProfileFinal=()=>{
+    this.setState({
+      profileFinalized:true
+    })
+  }
+  
 
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
@@ -56,27 +67,31 @@ export default class App extends React.Component {
         return (
           <View style={styles.container}>
             {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-            {/* <Login hasChosenChange={this.hasChosenChange} /> */}
-            <AppNavigator/>
+            <Login hasChosenChange={this.hasChosenChange} />
+            {/* <AppNavigator/> */}
 
           </View>
         );
       }else{
-        if(!this.state.profileChosen){
+        if(!this.state.profileChose){
           return(
             <ChooseTutor isMentor={this.state.isMentor} goBack={this.goBack} profileChosen={this.profileChosen} />
           )
         }else{
+          if(!this.state.profileFinalized){
+            return(
+            <ProfilePage setProfileFinal={this.setProfileFinal}/>
+          )
+          }
+          else{
           return(
             <AppNavigator/>
           )
         }
+        }
       }
     }
   }
-
-
-
 
   _loadResourcesAsync = async () => {
     return Promise.all([
