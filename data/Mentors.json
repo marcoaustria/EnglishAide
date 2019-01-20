@@ -1,0 +1,62 @@
+[
+    {
+        "_id": 1,
+        "fname": "John",
+        "lname": "Doe",
+        "icon": "",
+        "Languages": [
+            "Spanish", "Portuguese"
+        ],
+        "Specialties": [
+            "Math", "Geography"
+        ], 
+        "Interests" : [
+            "Soccer", "Guitar"
+        ]
+    },
+    {
+        "_id": 2,
+        "fname": "Jorge",
+        "lname": "Deo",
+        "icon": "",
+        "Languages": [
+            "Mandarin"
+        ],
+        "Specialties": [
+            "Reading"
+        ], 
+        "Interests" : [
+            "Piano", "Singing"
+        ]
+    },
+    {
+        "_id": 3,
+        "fname": "Jorgina",
+        "lname": "Oro",
+        "icon": "",
+        "Languages": [
+            "German"
+        ],
+        "Specialties": [
+            "Geography"
+        ], 
+        "Interests" : [
+            "Soap Opera", "Gym"
+        ]
+    },
+    {
+        "_id": 4,
+        "fname": "Dio",
+        "lname": "Brando",
+        "icon": "",
+        "Languages": [
+            "Italian"
+        ],
+        "Specialties": [
+            "Business", "Math"
+        ], 
+        "Interests" : [
+            "Collecting","Fortune-Telling"
+        ]
+    }
+]
