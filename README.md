@@ -1,4 +1,4 @@
-![GitHub Logo](/images/IMG_0177.PNG)
+![GitHub Logo](/images/IMG_0177.PNG | width=100)
 ![GitHub Logo](/images/IMG_0178.PNG)
 ![GitHub Logo](/images/IMG_0179.PNG)
 ![GitHub Logo](/images/IMG_0180.PNG)
